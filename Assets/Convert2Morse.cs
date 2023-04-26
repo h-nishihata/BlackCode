@@ -11,6 +11,7 @@ public class Convert2Morse : MonoBehaviour
     //public Text t;
     public GameObject grid;
     public GameObject[] images;
+    bool isShutterPressed;
 
     void Start()
     {
@@ -27,6 +28,21 @@ public class Convert2Morse : MonoBehaviour
 
         // 変換後のコードを表示
         //t.text = string.Join(" ", result.ToArray());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !isShutterPressed)
+        { 
+            string folderPath = "Assets/Screenshots/"; 
+            var screenshotName =
+                                    "Screenshot_" +
+                                    System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") + // puts the current time right into the screenshot name
+                                    ".png"; // put youre favorite data format here
+            ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folderPath, screenshotName), 2); // takes the sceenshot, the "2" is for the scaled resolution, you can put this to 600 but it will take really long to scale the image up
+            Debug.Log(folderPath + screenshotName); // You get instant feedback in the console
+            isShutterPressed = true;
+        }
     }
 
     void InstantiateImage(int imgNum)
