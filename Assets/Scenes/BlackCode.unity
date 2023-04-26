@@ -335,7 +335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &531824674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,8 +497,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: 
   temp: 
-  result: []
-  t: {fileID: 531824674}
   grid: {fileID: 0}
   images: []
 --- !u!4 &1828485976
@@ -592,12 +590,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: 
   temp: 
-  result: []
-  t: {fileID: 531824674}
   grid: {fileID: 2038241017}
   images:
   - {fileID: 9019922927073224339, guid: 43153623539f83b478ecf552899bce18, type: 3}
   - {fileID: 9019922927073224339, guid: cc733aeaafbeea84cbe3b0e10ef0345f, type: 3}
   - {fileID: 9019922927073224339, guid: fb27b3a4e4dfc484182c77d8029c140d, type: 3}
   - {fileID: 9019922927073224339, guid: 5b0dba53f99d93e43911f648e7451f6b, type: 3}
-  - {fileID: 9019922927073224339, guid: ac9c6d78c21ca1348b1c75fcaa68a7c0, type: 3}
