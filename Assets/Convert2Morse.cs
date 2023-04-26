@@ -7,14 +7,14 @@ public class Convert2Morse : MonoBehaviour
 {
     public string input;
     public List<char> temp = new List<char>();
-    public List<string> result = new List<string>();
-    public Text t;
+    //public List<string> result = new List<string>();
+    //public Text t;
     public GameObject grid;
     public GameObject[] images;
 
     void Start()
     {
-        input = "シランガナ";
+        input = "ユクカワノナガレハタエズシテ";
         
         // 文章を文字に分解
         temp.AddRange(input);
@@ -24,7 +24,7 @@ public class Convert2Morse : MonoBehaviour
             this.ConvertChar2Morse(temp[i]);
 
         // 変換後のコードを表示
-        t.text = string.Join(" ", result.ToArray());
+        //t.text = string.Join(" ", result.ToArray());
     }
 
     void InstantiateImage(int imgNum)
@@ -40,286 +40,706 @@ public class Convert2Morse : MonoBehaviour
             case 'A':
             case 'イ':
             case 'ィ':
-                result.Add("・-");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("・-");
                 break;
             case 'ロ':
-                result.Add("・-・-");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("・-・-");
                 break;
             case 'B':
             case 'ハ':
-                result.Add("-・・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("-・・・");
                 break;
             case 'C':
             case 'ニ':
-                result.Add("-・-・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                //result.Add("-・-・");
                 break;
             case 'D':
             case 'ホ':
-                result.Add("-・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("-・・");
                 break;
             case 'E':
             case 'ヘ':
-                result.Add("・");
+                InstantiateImage(0);
+                //result.Add("・");
                 break;
             case 'ト':
-                result.Add("・・-・・");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・・-・・");
                 break;
             case 'F':
             case 'チ':
-                result.Add("・・-・");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                //result.Add("・・-・");
                 break;
             case 'G':
             case 'リ':
-                result.Add("--・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                //result.Add("--・");
                 break;
             case 'H':
             case 'ヌ':
-                result.Add("・・・・");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・・・・");
                 break;
             case 'ル':
-                result.Add("-・--・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                //result.Add("-・--・");
                 break;
             case 'I':
-                result.Add("・・");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・・");
                 break;
             case 'J':
             case 'ヲ':
-                result.Add("・---");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("・---");
                 break;
             case 'K':
             case 'ワ':
-                result.Add("-・-");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("-・-");
                 break;
             case 'L':
             case 'カ':
-                result.Add("・-・・");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・-・・");
                 break;
             case 'M':
             case 'ヨ':
             case 'ョ':
-                result.Add("--");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("--");
                 break;
             case 'N':
             case 'タ':
-                result.Add("-・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                //result.Add("-・");
                 break;
             case 'O':
             case 'レ':
-                result.Add("---");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("---");
                 break;
             case 'ソ':
-                result.Add("---・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                //result.Add("---・");
                 break;
             case 'P':
             case 'ツ':
             case 'ッ':
-                result.Add("・--・");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                //result.Add("・--・");
                 break;
             case 'Q':
             case 'ネ':
-                result.Add("--・-");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("--・-");
                 break;
             case 'R':
             case 'ナ':
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
-                InstantiateImage(3);
                 InstantiateImage(0);
-                result.Add("・-・");
+                //result.Add("・-・");
                 break;
             case 'S':
             case 'ラ':
                 InstantiateImage(0);
                 InstantiateImage(0);
                 InstantiateImage(0);
-                result.Add("・・・");
+                //result.Add("・・・");
                 break;
             case 'T':
             case 'ム':
-                result.Add("-");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("-");
                 break;
             case 'U':
             case 'ウ':
             case 'ゥ':
-                result.Add("・・-");
-                break;
-            case 'ヰ':
-                result.Add("・-・・-");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("・・-");
                 break;
             case 'ノ':
-                result.Add("・・--");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("・・--");
                 break;
             case 'オ':
             case 'ォ':
-                result.Add("・-・・・");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・-・・・");
                 break;
             case 'V':
             case 'ク':
-                result.Add("・・・-");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("・・・-");
                 break;
             case 'W':
             case 'ヤ':
             case 'ャ':
-                result.Add("・--");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("・--");
                 break;
             case 'X':
             case 'マ':
-                result.Add("-・・-");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("-・・-");
                 break;
             case 'Y':
             case 'ケ':
-                result.Add("-・--");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("-・--");
                 break;
             case 'Z':
             case 'フ':
-                result.Add("--・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("--・・");
                 break;
 
             case 'コ':
-                result.Add("----");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("----");
                 break;
             case 'エ':
             case 'ェ':
-                result.Add("-・---");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("-・---");
                 break;
             case 'テ':
-                result.Add("・-・--");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("・-・--");
                 break;
             case 'ア':
             case 'ァ':
-                result.Add("--・--");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("--・--");
                 break;
             case 'サ':
-                result.Add("-・-・-");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("-・-・-");
                 break;
             case 'キ':
-                result.Add("-・-・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("-・-・・");
                 break;
             case 'ユ':
             case 'ュ':
-                result.Add("-・・--");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("-・・--");
                 break;
             case 'メ':
-                result.Add("-・・・-");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("-・・・-");
                 break;
             case 'ミ':
-                result.Add("・・-・-");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("・・-・-");
                 break;
             case 'シ':
                 InstantiateImage(1);
                 InstantiateImage(2);
-                InstantiateImage(3);
                 InstantiateImage(1);
                 InstantiateImage(2);
-                InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
-                InstantiateImage(3);
                 InstantiateImage(0);
-                result.Add("--・-・");
-                break;
-            case 'ヱ':
-                result.Add("・--・・");
+                //result.Add("--・-・");
                 break;
             case 'ヒ':
-                result.Add("--・・-");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("--・・-");
                 break;
             case 'モ':
-                result.Add("-・・-・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                //result.Add("-・・-・");
                 break;
             case 'セ':
-                result.Add("・---・");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                //result.Add("・---・");
                 break;
             case 'ス':
-                result.Add("---・-");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                //result.Add("---・-");
                 break;
             case 'ン':
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
-                InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
-                InstantiateImage(3);
                 InstantiateImage(0);
-                result.Add("・-・-・");
+                //result.Add("・-・-・");
                 break;
 
             case 'ガ':
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
-                InstantiateImage(0);
-                InstantiateImage(0);
-                result.Add("・-・・ ・・");
+                //result.Add("・-・・ ・・");
                 break;
             case 'ギ':
-                result.Add("-・-・・ ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("-・-・・ ・・");
                 break;
             case 'グ':
-                result.Add("・・・- ・・");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・・・- ・・");
                 break;
             case 'ゲ':
-                result.Add("-・-- ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("-・-- ・・");
                 break;
             case 'ゴ':
-                result.Add("---- ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("---- ・・");
                 break;
 
             case 'ザ':
-                result.Add("-・-・- ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("-・-・- ・・");
                 break;
             case 'ジ':
-                result.Add("--・-・ ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("--・-・ ・・");
                 break;
             case 'ズ':
-                result.Add("---・- ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("---・- ・・");
                 break;
             case 'ゼ':
-                result.Add("・---・ ・・");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・---・ ・・");
                 break;
             case 'ゾ':
-                result.Add("---・ ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("---・ ・・");
                 break;
 
             case 'ダ':
-                result.Add("-・ ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("-・ ・・");
                 break;
             case 'ヂ':
-                result.Add("・・-・ ・・");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・・-・ ・・");
                 break;
             case 'ヅ':
-                result.Add("・--・ ・・");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・--・ ・・");
                 break;
             case 'デ':
-                result.Add("・-・-- ・・");
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・-・-- ・・");
                 break;
             case 'ド':
-                result.Add("・・-・・ ・・");
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・・-・・ ・・");
                 break;
 
             case 'バ':
-                result.Add("-・・・ ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("-・・・ ・・");
                 break;
             case 'ビ':
-                result.Add("--・・- ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("--・・- ・・");
                 break;
             case 'ブ':
-                result.Add("--・・ ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("--・・ ・・");
                 break;
             case 'ベ':
-                result.Add("・ ・・");
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("・ ・・");
                 break;
             case 'ボ':
-                result.Add("-・・ ・・");
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                InstantiateImage(3);
+                InstantiateImage(0);
+                InstantiateImage(0);
+                //result.Add("-・・ ・・");
                 break;
 
+                /*
             case 'パ':
                 result.Add("-・・・ ・・－－・");
                 break;
@@ -335,7 +755,6 @@ public class Convert2Morse : MonoBehaviour
             case 'ポ':
                 result.Add("-・・ ・・－－・");
                 break;
-                /*
                 case '゛': return new List<char> { m.O, m.O };
                     case '゜': return new List<char> { m.O, m.O, m._, m._, m.O };
                     case '1': return new List<char> { m.O, m._, m._, m._, m._ };
