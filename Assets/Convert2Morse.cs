@@ -15,9 +15,14 @@ public class Convert2Morse : MonoBehaviour
 
     void Start()
     {
-        input = "ユク カワ ノ ナガレ ハ タエズ シテ シカモモトノミズニアラズ ナガレニウカブウタカタハ カツキエカツムスビテ ヒサシクトドマリタルタメシナシ ヨノナカニアルヒトトスミカト マタカクノゴトシ" +
-            "タマシキミヤコノウチニ ムネヲナラベイラカヲアラソエル タカキイヤシキヒトノスマイハ ヨヨヲヘテツキセヌモノナレド コレヲマコトカトタズヌレバ ムカシアリシイエハマレナリ アルイハコゾヤケテコトシツクレリ" +
-            "アルイハオオイエホロビテコイエトナル スムヒトモコレニオナジ";
+        input = "ユク カワ ノ ナガレ ハ タエズ シテ / シカモ モト ノ ミズ ニ アラズ /              "
+        + "                                   "
+        + "ヨドミ ニ ウカブ ウタカタ ハ / カツ キエ カツ ムスビテ / ヒサシク トドマリタル タメシ ナシ /              "
+        + "                                   "
+        + "ヨ ノ ナカ ニ アル ヒト ト スミカ ト マタ カク ノ ゴトシ /       "
+        + "                                   "
+        + "タマシキ ミヤコ ノ ウチ ニ / ムネ ヲ ナラベ イラカヲ アラソエル / タカキ イヤシ";
+        // キヒトノスマイハ / ヨヨ ヲ ヘテ ツキセヌ モノ ナレド / コレ ヲ マコト カ ト タズヌレバ / ムカシ アリシ イエ ハ マレ ナリ / アルイハ コゾ ヤケテ コトシ ツクレリ / アルイ ハ オオイエ ホロビテ コイエ ト ナル
         
         // 文章を文字に分解
         temp.AddRange(input);
@@ -61,6 +66,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("・-");
                 break;
             case 'ロ':
@@ -70,6 +76,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("・-・-");
                 break;
             case 'B':
@@ -79,6 +86,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・・・");
                 break;
             case 'C':
@@ -89,6 +97,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・-・");
                 break;
             case 'D':
@@ -97,11 +106,13 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・・");
                 break;
             case 'E':
             case 'ヘ':
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・");
                 break;
             case 'ト':
@@ -111,6 +122,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・・-・・");
                 break;
             case 'F':
@@ -120,6 +132,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・・-・");
                 break;
             case 'G':
@@ -129,6 +142,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("--・");
                 break;
             case 'H':
@@ -137,6 +151,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・・・・");
                 break;
             case 'ル':
@@ -148,11 +163,13 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・--・");
                 break;
             case 'I':
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・・");
                 break;
             case 'J':
@@ -164,6 +181,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("・---");
                 break;
             case 'K':
@@ -193,6 +211,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("--");
                 break;
             case 'N':
@@ -200,6 +219,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・");
                 break;
             case 'O':
@@ -210,6 +230,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("---");
                 break;
             case 'ソ':
@@ -220,6 +241,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("---・");
                 break;
             case 'P':
@@ -231,6 +253,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・--・");
                 break;
             case 'Q':
@@ -242,6 +265,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("--・-");
                 break;
             case 'R':
@@ -250,6 +274,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・-・");
                 break;
             case 'S':
@@ -257,12 +282,14 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・・・");
                 break;
             case 'T':
             case 'ム':
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("-");
                 break;
             case 'U':
@@ -272,6 +299,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("・・-");
                 break;
             case 'ノ':
@@ -292,6 +320,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・-・・・");
                 break;
             case 'V':
@@ -312,6 +341,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("・--");
                 break;
             case 'X':
@@ -322,6 +352,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("-・・-");
                 break;
             case 'Y':
@@ -333,6 +364,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("-・--");
                 break;
             case 'Z':
@@ -343,6 +375,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("--・・");
                 break;
 
@@ -355,6 +388,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("----");
                 break;
             case 'エ':
@@ -368,6 +402,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("-・---");
                 break;
             case 'テ':
@@ -379,6 +414,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("・-・--");
                 break;
             case 'ア':
@@ -392,6 +428,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("--・--");
                 break;
             case 'サ':
@@ -403,6 +440,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("-・-・-");
                 break;
             case 'キ':
@@ -413,6 +451,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(2);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・-・・");
                 break;
             case 'ユ':
@@ -436,6 +475,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("-・・・-");
                 break;
             case 'ミ':
@@ -446,6 +486,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("・・-・-");
                 break;
             case 'シ':
@@ -457,6 +498,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("--・-・");
                 break;
             case 'ヒ':
@@ -468,6 +510,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("--・・-");
                 break;
             case 'モ':
@@ -478,6 +521,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・・-・");
                 break;
             case 'セ':
@@ -489,6 +533,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・---・");
                 break;
             case 'ス':
@@ -501,6 +546,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(0);
                 InstantiateImage(1);
                 InstantiateImage(2);
+                InstantiateImage(3);
                 //result.Add("---・-");
                 break;
             case 'ン':
@@ -511,6 +557,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・-・-・");
                 break;
 
@@ -523,6 +570,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・-・・ ・・");
                 break;
             case 'ギ':
@@ -536,6 +584,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・-・・ ・・");
                 break;
             case 'グ':
@@ -547,6 +596,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・・・- ・・");
                 break;
             case 'ゲ':
@@ -560,6 +610,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・-- ・・");
                 break;
             case 'ゴ':
@@ -574,6 +625,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("---- ・・");
                 break;
 
@@ -589,6 +641,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・-・- ・・");
                 break;
             case 'ジ':
@@ -603,6 +656,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("--・-・ ・・");
                 break;
             case 'ズ':
@@ -618,6 +672,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("---・- ・・");
                 break;
             case 'ゼ':
@@ -632,6 +687,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・---・ ・・");
                 break;
             case 'ゾ':
@@ -645,6 +701,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("---・ ・・");
                 break;
 
@@ -655,6 +712,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・ ・・");
                 break;
             case 'ヂ':
@@ -666,6 +724,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・・-・ ・・");
                 break;
             case 'ヅ':
@@ -678,6 +737,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・--・ ・・");
                 break;
             case 'デ':
@@ -692,6 +752,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・-・-- ・・");
                 break;
             case 'ド':
@@ -704,6 +765,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・・-・・ ・・");
                 break;
 
@@ -716,6 +778,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・・・ ・・");
                 break;
             case 'ビ':
@@ -730,6 +793,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("--・・- ・・");
                 break;
             case 'ブ':
@@ -742,6 +806,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("--・・ ・・");
                 break;
             case 'ベ':
@@ -749,6 +814,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("・ ・・");
                 break;
             case 'ボ':
@@ -759,12 +825,24 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 InstantiateImage(0);
                 InstantiateImage(0);
+                InstantiateImage(3);
                 //result.Add("-・・ ・・");
                 break;
             //スペース
             case ' ':
                 InstantiateImage(3);
                 InstantiateImage(3);
+                break;
+            case '/': 
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
+                InstantiateImage(0);
+                InstantiateImage(1);
+                InstantiateImage(2);
                 break;
                 /*
             case 'パ':
