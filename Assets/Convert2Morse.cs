@@ -1,33 +1,24 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Convert2Morse : MonoBehaviour
 {
-    public string input;
-    public List<char> temp = new List<char>();
-    //public List<string> result = new List<string>();
-    //public Text t;
+    private string input;
+    private List<char> temp = new List<char>();
     public GameObject grid;
     public GameObject[] images;
+    private string newLine = "                                   ";
     bool isShutterPressed;
 
     void Start()
     {
-        input = "ユク カワ ノ ナガレ ハ タエズ シテ / シカモ モト ノ ミズ ニ アラズ /              "
-        + "                                   "
-        + "ヨドミ ニ ウカブ ウタカタ ハ / カツ キエ カツ ムスビテ / ヒサシク トドマリタル タメシ ナシ /              "
-        + "                                   "
-        + "ヨ ノ ナカ ニ アル ヒト ト スミカ ト マタ カク ノ ゴトシ /       "
-        + "                                   "
+        input = "ユク カワ ノ ナガレ ハ タエズ シテ / シカモ モト ノ ミズ ニ アラズ /              " + newLine
+        + "ヨドミ ニ ウカブ ウタカタ ハ / カツ キエ カツ ムスビテ / ヒサシク トドマリタル タメシ ナシ /              " + newLine
+        + "ヨ ノ ナカ ニ アル ヒト ト スミカ ト マタ カク ノ ゴトシ /       " + newLine
         + "タマシキ ミヤコ ノ ウチ ニ / ムネ ヲ ナラベ イラカヲ アラソヘル / タカキ イヤシキ　ヒト　ノ　スマイ　ハ / ヨヨ ヲ ヘテ ツキセヌ モノ ナレド /"
-        + "コレ ヲ マコト カ ト タズヌレバ / ムカシ アリシ イエ ハ マレ ナリ /                   "
-        + "                                   "
-        + "アルイハ コゾ ヤケテ コトシ ツクレリ / アルイ ハ オオイエ ホロビテ コイエ ト ナル /                         "
-        + "                                   "
-        + "スム　ヒト　モ　コレ　ニ　オナジ / トコロ　モ　カハラズ / ヒト　モ　オオカレド / イニシ　ニ　ミエシ　ヒト　ハ　サンジュウニン　ガ　ナカ　ニ / ワズカニ　ヒトリ　フタリ　ナリ /                        "
-        + "                                   "
+        + "コレ ヲ マコト カ ト タズヌレバ / ムカシ アリシ イエ ハ マレ ナリ /                   " + newLine
+        + "アルイハ コゾ ヤケテ コトシ ツクレリ / アルイ ハ オオイエ ホロビテ コイエ ト ナル /                         " + newLine
+        + "スム　ヒト　モ　コレ　ニ　オナジ / トコロ　モ　カハラズ / ヒト　モ　オオカレド / イニシ　ニ　ミエシ　ヒト　ハ　サンジュウニン　ガ　ナカ　ニ / ワズカニ　ヒトリ　フタリ　ナリ /                        " + newLine
         + "アシタ ニ シニ / ユウベ ニ ウマルル ナラヒ / タダ ミズ ノ アワ ニゾ ニタリケル /";
 
         // 文章を文字に分解
@@ -46,8 +37,7 @@ public class Convert2Morse : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !isShutterPressed)
         { 
             string folderPath = "Assets/Screenshots/"; 
-            var screenshotName =
-                                    "Screenshot_" +
+            var screenshotName = "Screenshot_" +
                                     System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") + // puts the current time right into the screenshot name
                                     ".png"; // put youre favorite data format here
             ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folderPath, screenshotName), 2); // takes the sceenshot, the "2" is for the scaled resolution, you can put this to 600 but it will take really long to scale the image up
@@ -58,8 +48,8 @@ public class Convert2Morse : MonoBehaviour
 
     void InstantiateImage(int imgNum)
     {
-        GameObject go = Instantiate(images[imgNum]);
-        go.transform.parent = grid.gameObject.transform;
+        var go = Instantiate(images[imgNum]);
+        go.transform.SetParent(grid.gameObject.transform);
     }
 
     void ConvertChar2Morse(char c)
@@ -834,7 +824,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(3);
                 //result.Add("-・・ ・・");
                 break;
-            //スペース
+            // スペース
             case ' ':
                 InstantiateImage(3);
                 InstantiateImage(3);
@@ -850,7 +840,7 @@ public class Convert2Morse : MonoBehaviour
                 InstantiateImage(1);
                 InstantiateImage(2);
                 break;
-                /*
+            /*
             case 'パ':
                 result.Add("-・・・ ・・－－・");
                 break;
@@ -866,34 +856,30 @@ public class Convert2Morse : MonoBehaviour
             case 'ポ':
                 result.Add("-・・ ・・－－・");
                 break;
-                case '゛': return new List<char> { m.O, m.O };
-                    case '゜': return new List<char> { m.O, m.O, m._, m._, m.O };
-                    case '1': return new List<char> { m.O, m._, m._, m._, m._ };
-                    case '2': return new List<char> { m.O, m.O, m._, m._, m._ };
-                    case '3': return new List<char> { m.O, m.O, m.O, m._, m._ };
-                    case '4': return new List<char> { m.O, m.O, m.O, m.O, m._ };
-                    case '5': return new List<char> { m.O, m.O, m.O, m.O, m.O };
-                    case '6': return new List<char> { m._, m.O, m.O, m.O, m.O };
-                    case '7': return new List<char> { m._, m._, m.O, m.O, m.O };
-                    case '8': return new List<char> { m._, m._, m._, m.O, m.O };
-                    case '9': return new List<char> { m._, m._, m._, m._, m.O };
-                    case '0': return new List<char> { m._, m._, m._, m._, m._ };
-                    //欧文記号
-                    case '.': return new List<char> { m.O, m._, m.O, m._, m.O, m._ };
-                    case ',': return new List<char> { m._, m._, m.O, m.O, m._, m._ };
-                    case '?': return new List<char> { m.O, m.O, m._, m._, m.O, m.O };
-                    case '!': return new List<char> { m._, m.O, m._, m.O, m._, m._ };
-                    case '-': return new List<char> { m._, m.O, m.O, m.O, m.O, m._ };
-                    case '/': return new List<char> { m._, m.O, m.O, m._, m.O };
-                    case '@': return new List<char> { m.O, m._, m._, m.O, m._, m.O };
-                    case '(': return new List<char> { m._, m.O, m._, m._, m.O };
-                    case ')': return new List<char> { m._, m.O, m._, m._, m.O, m._ };
-                    //和文記号
-                    case 'ー': return new List<char> { m.O, m._, m._, m.O, m._ };
-                    case '、': return new List<char> { m.O, m._, m.O, m._, m.O, m._ };
-                    
-                    case ' ': return m.SPACE_BETWN_WORDS;
-                    */
+            case '1': return new List<char> { m.O, m._, m._, m._, m._ };
+            case '2': return new List<char> { m.O, m.O, m._, m._, m._ };
+            case '3': return new List<char> { m.O, m.O, m.O, m._, m._ };
+            case '4': return new List<char> { m.O, m.O, m.O, m.O, m._ };
+            case '5': return new List<char> { m.O, m.O, m.O, m.O, m.O };
+            case '6': return new List<char> { m._, m.O, m.O, m.O, m.O };
+            case '7': return new List<char> { m._, m._, m.O, m.O, m.O };
+            case '8': return new List<char> { m._, m._, m._, m.O, m.O };
+            case '9': return new List<char> { m._, m._, m._, m._, m.O };
+            case '0': return new List<char> { m._, m._, m._, m._, m._ };
+            //欧文記号
+            case '.': return new List<char> { m.O, m._, m.O, m._, m.O, m._ };
+            case ',': return new List<char> { m._, m._, m.O, m.O, m._, m._ };
+            case '?': return new List<char> { m.O, m.O, m._, m._, m.O, m.O };
+            case '!': return new List<char> { m._, m.O, m._, m.O, m._, m._ };
+            case '-': return new List<char> { m._, m.O, m.O, m.O, m.O, m._ };
+            case '/': return new List<char> { m._, m.O, m.O, m._, m.O };
+            case '@': return new List<char> { m.O, m._, m._, m.O, m._, m.O };
+            case '(': return new List<char> { m._, m.O, m._, m._, m.O };
+            case ')': return new List<char> { m._, m.O, m._, m._, m.O, m._ };
+            //和文記号
+            case 'ー': return new List<char> { m.O, m._, m._, m.O, m._ };
+            case '、': return new List<char> { m.O, m._, m.O, m._, m.O, m._ };
+            */
         }
     }
 }
